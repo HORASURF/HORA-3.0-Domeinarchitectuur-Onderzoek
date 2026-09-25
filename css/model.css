@@ -227,3 +227,192 @@ input[type=range]::-moz-range-thumb {
     transform: translateY(-50%);
 	padding-right: 5px;
 }
+
+/* HORA-CUSTOM-NAVBAR */
+/*
+ * HORA web publication styling
+ * Primary light blue: #E1EFFA
+ * Text:               #000000
+ * Soft hover:         #EDF6FC
+ * Selected item:      #CFE5F5
+ * Accent/border:      #5E91B5 / #C6DCEB
+ */
+
+/* ===== Menu typography ===== */
+/* Calibri is used when installed; fallbacks keep the layout readable elsewhere. */
+html.model .navbar,
+html.model .root-panel,
+html.model #modelContentModal {
+    font-family: Calibri, "Segoe UI", Arial, sans-serif !important;
+}
+
+/* ===== Top navigation ===== */
+.navbar,
+.navbar-inverse {
+    background-color: #E1EFFA !important;
+    border-color: #E1EFFA !important;
+}
+
+.navbar-inverse .navbar-brand,
+.navbar-inverse .navbar-nav > li > a {
+    color: #000000 !important;
+}
+
+.navbar-inverse .navbar-brand:hover,
+.navbar-inverse .navbar-brand:focus,
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+    color: #000000 !important;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+    background-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+.navbar-inverse .navbar-nav > li > a:focus {
+    background-color: transparent !important;
+}
+
+/* ===== Left navigation panel ===== */
+html.model .root-panel {
+    border: 0 !important;
+    box-shadow: none !important;
+    background: #F8FBFD !important;
+}
+
+html.model .root-panel .root-panel-heading {
+    background: #E1EFFA !important;
+    color: #000000 !important;
+    border-color: #C6DCEB !important;
+    font-weight: 600;
+}
+
+html.model .root-panel-body {
+    background: #F8FBFD !important;
+    color: #000000;
+}
+
+html.model .root-panel-body > b > a {
+    display: block;
+    margin: 2px 0 7px 0;
+    padding: 5px 7px;
+    border-radius: 4px;
+    color: #000000 !important;
+    text-decoration: none;
+}
+
+html.model .root-panel-body > b > a:hover,
+html.model .root-panel-body > b > a:focus {
+    background: #EDF6FC;
+    color: #000000 !important;
+    text-decoration: none;
+}
+
+/* ===== Views tree ===== */
+html.model .view-tree li.tree-folder > span {
+    display: block;
+    padding: 3px 6px;
+    border-radius: 4px;
+    color: #000000;
+    cursor: pointer;
+}
+
+html.model .view-tree li.tree-folder > span:hover {
+    background: #EDF6FC;
+}
+
+html.model .view-tree li.tree-element > a {
+    display: block;
+    padding: 3px 7px;
+    border-radius: 4px;
+    color: #000000 !important;
+    text-decoration: none;
+}
+
+html.model .view-tree li.tree-element > a:hover,
+html.model .view-tree li.tree-element > a:focus {
+    background: #EDF6FC;
+    color: #000000 !important;
+    text-decoration: none;
+}
+
+/* Persistent currently selected View */
+html.model .view-tree li.tree-element > a.hora-selected {
+    background: #CFE5F5 !important;
+    color: #000000 !important;
+    font-weight: 600;
+    box-shadow: inset 3px 0 0 #5E91B5;
+}
+
+/* ===== Search field ===== */
+html.model #tree-search:focus {
+    background-color: #FFFFFF !important;
+    border: 1px solid #8FB8D4 !important;
+    box-shadow: 0 0 0 2px rgba(94, 145, 181, 0.12);
+    outline: none;
+}
+
+html.model #tree-search.filtered {
+    background-color: #CFE5F5 !important;
+}
+
+/* ===== Splitters around the left-hand panes ===== */
+html.model .ui-layout-resizer {
+    border-color: #D5E4EE !important;
+    background: #EDF4F8 !important;
+}
+
+/* ===== Model Content and About modals ===== */
+html.model #modelContentModal .modal-header,
+html.model #myModal .modal-header {
+    background: #E1EFFA;
+    color: #000000;
+    border-bottom-color: #C6DCEB;
+}
+
+html.model #modelContentModal .modal-footer,
+html.model #myModal .modal-footer {
+    background: #F8FBFD;
+    border-top-color: #D5E4EE;
+}
+
+html.model #modelContentModal .model-content-tree li.tree-folder > span {
+    display: block;
+    padding: 3px 6px;
+    border-radius: 4px;
+    color: #000000;
+    cursor: pointer;
+}
+
+html.model #modelContentModal .model-content-tree li.tree-folder > span:hover {
+    background: #EDF6FC;
+}
+
+html.model #modelContentModal .model-content-tree li.tree-element > a {
+    display: block;
+    padding: 3px 7px;
+    border-radius: 4px;
+    color: #000000 !important;
+    text-decoration: none;
+}
+
+html.model #modelContentModal .model-content-tree li.tree-element > a:hover,
+html.model #modelContentModal .model-content-tree li.tree-element > a:focus {
+    background: #EDF6FC;
+    color: #000000 !important;
+    text-decoration: none;
+}
+
+/* ===== Headings in element/detail frames ===== */
+/* Panel headings change, ArchiMate diagrams themselves do not. */
+html.frame .panel-default > .panel-heading {
+    background: #E1EFFA !important;
+    color: #000000 !important;
+    border-color: #C6DCEB !important;
+}
+
+html.frame .panel-default {
+    border-color: #D5E4EE !important;
+}
+
+/* HORA-CUSTOM-STYLING-END */

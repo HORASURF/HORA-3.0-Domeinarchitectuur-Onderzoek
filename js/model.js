@@ -24,7 +24,7 @@ function toggleTreeEntry(listItem) {
 		$(listItem).addClass('sorted');
 	}
 	
-	if (isTreeFiltered()) {
+	if ($(listItem).closest('.view-tree').length && isTreeFiltered()) {
 		return;
 	} else {
 		var children = $(listItem).find(' > ul > li');
@@ -182,14 +182,14 @@ function searchInViews() {
 	const filter = $('#tree-search').val();
 
 	// Hide all entries
-	listItems = $('.tree li');
+	listItems = $('.view-tree li');
 	listItems.hide();
 	listItems.find(' > span > i').addClass('glyphicon-triangle-right').removeClass('glyphicon-triangle-bottom');
 
 	// Is a filter set?
 	if (filter.length === 0) {
 		// No: show the top level entries ('Model Content' and 'Views') and stop here
-		$('.tree > li').show();
+		$('.view-tree > li').show();
 		$('#tree-search').removeClass('filtered');
 		document.querySelector('#tree-search').title = "";
 		return;
@@ -200,7 +200,7 @@ function searchInViews() {
 	document.querySelector('#tree-search').title = "To clear filter, empty this field and press ENTER";
 
 	// Get model tree
-	let modelTree = $('.tree');
+	let modelTree = $('.view-tree');
 
 	// Case insensitive search (a 'li' matches if itself or its children match)
 	let foundItems = modelTree.find("li").filter(function () {
@@ -213,3 +213,60 @@ function searchInViews() {
 	foundItems.show();
 	foundItems.parent("ul").parent("li").find("> span > i").addClass('glyphicon-triangle-bottom').removeClass('glyphicon-triangle-right');
 }
+
+/* HORA-CUSTOM-MODEL-CONTENT */
+$(document).ready(function() {
+    $('#modelContentModal').on('click', 'a[href][target="element"]', function() {
+        $('#modelContentModal').modal('hide');
+    });
+});
+
+
+/* HORA-CUSTOM-VIEW-SELECTION */
+$(document).ready(function() {
+    function horaViewIdFromHref(href) {
+        return href.split('/').pop().slice(0, -5);
+    }
+
+    function horaMarkSelectedView(id) {
+        $('.view-tree a[target="view"]').removeClass('hora-selected');
+
+        if (!id) {
+            return;
+        }
+
+        $('.view-tree a[target="view"]').each(function() {
+            if (horaViewIdFromHref(this.href) === id) {
+                $(this).addClass('hora-selected');
+            }
+        });
+    }
+
+    function horaMarkSelectedViewFromLocation() {
+        const url = new URL(window.location);
+        horaMarkSelectedView(url.searchParams.get('view'));
+    }
+
+    $('.view-tree a[target="view"]').on('click.horaSelection', function() {
+        horaMarkSelectedView(horaViewIdFromHref(this.href));
+    });
+
+    $('.root-panel-body > b > a[target="view"]').on('click.horaSelection', function() {
+        horaMarkSelectedView(null);
+    });
+
+    $(window).on('popstate.horaSelection', function() {
+        horaMarkSelectedViewFromLocation();
+    });
+
+    $(window).on('message.horaSelection', function(e) {
+        const data = String(e.originalEvent.data || '');
+        const id = data.split('=').pop();
+
+        if (id) {
+            horaMarkSelectedView(id);
+        }
+    });
+
+    horaMarkSelectedViewFromLocation();
+});
