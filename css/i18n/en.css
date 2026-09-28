@@ -142,7 +142,7 @@
 
 /* Model Tree */
 :lang(en) .i18n-modeltree:after {content: "Model Tree"}
-:lang(en) .i18n-model_content:after {content: "Model Content"}
+:lang(en) .i18n-model_content:after {content: "Elements"}
 :lang(en) .i18n-strategy:after {content: "Strategy"}
 :lang(en) .i18n-business_layer:after {content: "Business"}
 :lang(en) .i18n-application_layer:after {content: "Application"}
@@ -151,7 +151,7 @@
 :lang(en) .i18n-implementation:after {content: "Implementation & Migration"}
 :lang(en) .i18n-connectors:after {content: "Other"}
 :lang(en) .i18n-relations:after {content: "Relations"}
-:lang(en) .i18n-views:after {content: "Views"}
+:lang(en) .i18n-views:after {content: "Models"}
 
 /* Modal Dialogs */
 :lang(en) .i18n-hint:after {content: "Hint"}
