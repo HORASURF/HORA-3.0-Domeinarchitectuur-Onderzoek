@@ -10221,7 +10221,7 @@ NL: Instellingen hebben een verantwoordelijkheid in transities, zoals de klimaat
         </node>
       </view>
       <view identifier="id-cb7c4752533e44b3acc4ba3fa10fc236" xsi:type="Diagram">
-        <name xml:lang="en">7. Verticale architectuur Onderzoek uitvoeren en kennis vormen</name>
+        <name xml:lang="en">8. Verticale architectuur Onderzoek uitvoeren en kennis vormen</name>
         <node identifier="id-14b0cd1e875443a8ab4c9e68a5d5d7c7" elementRef="id-293d9fc9041e4a4487c34f89564b4c34" xsi:type="Element" x="36" y="204" w="205" h="55">
           <style>
             <fillColor r="245" g="220" b="163" a="100" />
@@ -16682,7 +16682,7 @@ NL: Instellingen hebben een verantwoordelijkheid in transities, zoals de klimaat
         </connection>
       </view>
       <view identifier="id-31f427b11dfe47dab5454381383e9f4e" xsi:type="Diagram">
-        <name xml:lang="en">6. Onderzoeksbedrijfsbedrijfsobjecten en rollen</name>
+        <name xml:lang="en">7. Onderzoeksbedrijfsbedrijfsobjecten en rollen</name>
         <node identifier="id-1ce88f6ba0094d3d94455c2467b247e0" xsi:type="Label" x="24" y="24" w="613" h="1429">
           <label xml:lang="en">Strategie, governance en onderzoekssturing</label>
           <style>
